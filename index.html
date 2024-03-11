@@ -143,13 +143,14 @@
       </div>
     </div>
     <div id="map"></div>
+
+    <div>Hello</div>
   </body>
 
   <script>
-
     const requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
+      method: "GET",
+      redirect: "follow",
     };
 
     //Objet fetch promesse donc mettre then ou catch
@@ -172,19 +173,19 @@
 
           //Layer la carte et la couche
           //Attribution pour dire qui a fait la carte
-          //.addTO = ajouter a la carte 
+          //.addTO = ajouter a la carte
 
           L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: "Aymeric",
           }).addTo(map);
-          
+
           //data features = tableau des valeurs on la map
           var dataFeature = data.features.map((v, k) => {
             L.marker(v.geometry.coordinates.reverse())
-            .addTo(map)
+              .addTo(map)
               .bindPopup("oui")
               .openPopup();
-            return v
+            return v;
           });
         } catch (e) {
           console.log(e);
